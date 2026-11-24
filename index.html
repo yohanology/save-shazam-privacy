@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Save Shazam to Spotify and SoundCloud</title>
+  <meta name="description" content="Privacy policy for the Save Shazam to Spotify and SoundCloud Chrome extension.">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0f1020;
+      --fg: #f2f3f7;
+      --muted: #a0a3b8;
+      --accent: #64b5f6;
+      --card: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f1020 0%, #16213e 100%);
+      color: var(--fg);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 96px;
+    }
+    header { margin-bottom: 32px; }
+    h1 { font-size: 28px; margin: 0 0 6px; }
+    .updated { color: var(--muted); font-size: 14px; margin: 0; }
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+    }
+    h2 { font-size: 18px; margin: 0 0 8px; }
+    h3 { font-size: 15px; margin: 16px 0 6px; color: var(--fg); }
+    p, li { font-size: 15px; color: var(--fg); }
+    ul { padding-left: 20px; margin: 8px 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code {
+      background: rgba(0,0,0,0.3);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Privacy Policy</h1>
+      <p class="updated">Save Shazam to Spotify and SoundCloud · Last updated: November 2026</p>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>Save Shazam to Spotify and SoundCloud is a browser extension that adds Spotify and SoundCloud buttons to Shazam song pages. It is not affiliated with Shazam, Spotify or SoundCloud.</p>
+      <p>By default the buttons only open a search page on Spotify or SoundCloud in a new tab. No account connection and no data storage are involved.</p>
+      <p>Two optional modes can be turned on from the popup:</p>
+      <ul>
+        <li>“Save straight to Liked Songs” connects your Spotify account to add tracks to your Liked Songs.</li>
+        <li>“Like the track automatically” clicks the Like button on the matching SoundCloud result, using the SoundCloud session already open in your browser.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data Collection</h2>
+      <h3>What we collect</h3>
+      <ul>
+        <li>Nothing in the default mode.</li>
+        <li><strong>Spotify OAuth tokens</strong>, only if you turn on the optional Liked Songs mode. They are used to save tracks to your Liked Songs and are stored locally in your browser.</li>
+      </ul>
+      <h3>What we do NOT collect</h3>
+      <ul>
+        <li>Personal information (name, email, etc.)</li>
+        <li>Browsing history</li>
+        <li>Shazam account information</li>
+        <li>Analytics or tracking data</li>
+        <li>No data is sent to servers owned by the extension author</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data Storage</h2>
+      <p>Data is stored <strong>locally</strong> in your browser using Chrome's storage API (<code>chrome.storage.local</code>), and only when you use one of the optional modes:</p>
+      <ul>
+        <li>Spotify access token</li>
+        <li>Spotify refresh token</li>
+        <li>Token expiry timestamp</li>
+        <li>Which Spotify mode is active</li>
+        <li>While you connect Spotify, a timestamp marking the request and, if the connection fails, its error message (both removed once the connection finishes or the popup shows the error)</li>
+        <li>Whether SoundCloud auto-like is on, and, for a few seconds while a SoundCloud tab loads, the title and artist of the track to like (in <code>chrome.storage.session</code>, cleared when the browser closes)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data Usage</h2>
+      <p>The track title and artist shown on the Shazam page are used to build the search. In the optional Liked Songs mode, your tokens are used exclusively to:</p>
+      <ul>
+        <li>Search for the track with Spotify's API</li>
+        <li>Add it to your Spotify Liked Songs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <h3>Spotify</h3>
+      <ul>
+        <li>Default mode: we open <code>open.spotify.com/search/&lt;artist and title&gt;</code> in a new tab.</li>
+        <li>Optional Liked Songs mode: we use Spotify's official API to search and save tracks. Authentication uses OAuth 2.0 with PKCE (no client secret). The only permission requested is to modify your Liked Songs.</li>
+        <li><a href="https://www.spotify.com/legal/privacy-policy/" target="_blank" rel="noopener">Spotify privacy policy</a></li>
+      </ul>
+      <h3>SoundCloud</h3>
+      <ul>
+        <li>Default mode: we only open a SoundCloud search page in a new tab.</li>
+        <li>Optional auto-like mode: in the search tab the extension opened, we read the results and click Like on the one that clearly matches the track. This uses your own SoundCloud session; the extension never sees your SoundCloud credentials and makes no API calls.</li>
+        <li>No data is sent to SoundCloud beyond the search and the Like click.</li>
+      </ul>
+      <h3>Shazam</h3>
+      <ul>
+        <li>We read the track title and artist from Shazam song pages you are viewing.</li>
+        <li>No data is sent to Shazam.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data Sharing</h2>
+      <p>We do <strong>not</strong> share, sell, or transfer your data to any third parties.</p>
+    </section>
+
+    <section>
+      <h2>Data Deletion</h2>
+      <p>To delete all stored data:</p>
+      <ul>
+        <li>Click the extension icon and click “Disconnect and go back to search” and untick “Like the track automatically” (this also removes the optional permissions), or</li>
+        <li>Uninstall the extension — all local data is automatically removed.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Permissions Explained</h2>
+      <p>Always requested:</p>
+      <ul>
+        <li><code>storage</code> — remember which Spotify mode you use and, in the optional mode, your Spotify tokens</li>
+        <li><code>https://www.shazam.com/song/*</code> — add the buttons to Shazam song pages</li>
+      </ul>
+      <p>Requested only when you turn on the Spotify Liked Songs mode:</p>
+      <ul>
+        <li><code>identity</code> — sign in to Spotify via <code>chrome.identity.launchWebAuthFlow</code></li>
+        <li><code>https://accounts.spotify.com/*</code> — Spotify sign-in</li>
+        <li><code>https://api.spotify.com/*</code> — search and save tracks</li>
+      </ul>
+      <p>Requested only when you turn on SoundCloud auto-like:</p>
+      <ul>
+        <li><code>scripting</code> and <code>https://soundcloud.com/*</code> — run the like script in the SoundCloud search tab the extension opened</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this privacy policy from time to time. Changes will be reflected in the "Last updated" date at the top of this page.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>For questions about this privacy policy, please email the developer at the contact address shown on the extension's Chrome Web Store page.</p>
+    </section>
+
+    <footer>The extension's code is included in the package you install, so these privacy practices can be checked.</footer>
+  </main>
+</body>
+</html>
